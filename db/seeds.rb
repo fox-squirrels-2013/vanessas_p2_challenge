@@ -1,4 +1,14 @@
 require 'faker'
+require 'active_record'
+require_relative '../app/models/skill'
+require_relative '../app/models/user'
+require_relative '../app/models/skills_users'
+
+
+
+ActiveRecord::Base.establish_connection(adapter: 'postgresql',
+  database: 'ar-people-skills_development' )
+
 
 # create a few users
 User.create :name => 'Dev Bootcamp Student', :email => 'me@example.com'
